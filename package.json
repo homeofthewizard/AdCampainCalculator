@@ -2,13 +2,13 @@
   "name": "campaincalculator",
   "version": "1.0.0",
   "description": "code for mediaritmics exercise",
-  "main": "index.js",
+  "main": "src/main/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "build": "babel src -d lib --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && node dist/index.js",
+    "start": "nodemon --exec babel-node src/main/index.js",
     "test": "mocha"
   },
   "dependencies": {

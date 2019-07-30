@@ -20,11 +20,11 @@ class CalculationElement{
     }
   }
 
-  get getLeftElement(){
+  get leftElement(){
     return this._left;
   }
 
-  get getRightElement(){
+  get rightElement(){
     return this._right;
   }
 

@@ -1,6 +1,8 @@
 "use strict";
 
 var CalculationElement = require('./model/calculationElement');
+var Operators = require('../../src/resources/operators');
+var CalculationOperand = require('./model/calculationOperand');
 
 class CampainCalculator{
 
@@ -8,22 +10,24 @@ class CampainCalculator{
   * method to check if a given user matches a campain filter
   * @return {boolean}
   */
-  async calculateIfUserMatchCampain(userId, campainMatcherOperation){
-    return await calculate(userId, campainFilterRootCalculationElement)
+  async calculateIfUserMatchCampain(userId, campainFilterRootCalculationElement){
+    return await this.calculate(userId, campainFilterRootCalculationElement)
   }
 
 
   async calculate(userId, calculationElement){
 
     if(calculationElement instanceof CalculationOperand){
-      return isInSegment(userId, calculationElement.getSegmentId())
+      console.log("checking if user is in segment: " + calculationElement.segmentId);
+      return await this.isInSegment(userId, calculationElement.segmentId);
 
     }
     else{
-      var left = calculate(userId, calculationElement.getLeftElement());
-      var right = calculate(userId, calculationElement.getRightElement());
+      var left = await this.calculate(userId, calculationElement.leftElement);
+      var right = await this.calculate(userId, calculationElement.rightElement);
 
-      return calculationElement.getOperator().operate(left,right);
+      console.log("calculating operation: " + calculationElement.operator.name);
+      return calculationElement.operator.operate(left,right);
     }
   }
 
@@ -38,6 +42,7 @@ class CampainCalculator{
     setTimeout(function() {
       console.log('fetching data from segment api');
     }, 1000);
+    return true;
   }
 
 }

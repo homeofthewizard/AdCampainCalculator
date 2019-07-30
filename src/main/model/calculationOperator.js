@@ -4,20 +4,28 @@ var CalculationElement = require('./calculationElement');
 
 
 /**
- * Model object presenting a segment in the campain calculation
+ * Model object presenting a logical operation in the campain calculation
  *
- * @prop {number} segmentId - the Id of the segment presented by this element of calculation
+ * @prop {number} operator - an operator value of the Operator static constent map
  */
 class CalculationOperator extends CalculationElement{
 
   constructor(left, right, operator){
     super(left,right);
-    this._segmentId = segmentId;
+    this._operator = operator;
   }
 
-  get getOperator(){
+  get operator(){
     return this._operator;
+  }
+
+  get leftElement(){
+    return super.leftElement;
+  }
+
+  get rightElement(){
+    return super.rightElement;
   }
 }
 
-module.exports = CalculationOperand;
+module.exports = CalculationOperator;

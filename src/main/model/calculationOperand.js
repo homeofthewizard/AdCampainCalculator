@@ -15,8 +15,16 @@ class CalculationOperand extends CalculationElement{
     this._segmentId = segmentId;
   }
 
-  get getSegmentId(){
+  get segmentId(){
     return this._segmentId;
+  }
+
+  get leftElement(){
+    return super.leftElement;
+  }
+
+  get rightElement(){
+    return super.rightElement;
   }
 }
 
