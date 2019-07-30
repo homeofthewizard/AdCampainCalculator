@@ -1,10 +1,27 @@
 {
   "name": "campaincalculator",
   "version": "1.0.0",
-  "description": "mediarithmics exercise\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[Ccode for mediaritmics exercise",
+  "description": "code for mediaritmics exercise",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d lib --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/index.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "enumify": "^1.0.4",
+    "sinon": "^7.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.0",
+    "rimraf": "^2.6.3"
   },
   "author": "",
   "license": "ISC"
