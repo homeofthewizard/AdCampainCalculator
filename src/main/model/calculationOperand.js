@@ -10,8 +10,8 @@ var CalculationElement = require('./calculationElement');
  */
 class CalculationOperand extends CalculationElement{
 
-  constructor(left, right, segmentId){
-    super(left,right);
+  constructor(segmentId){
+    super(undefined,undefined);
     this._segmentId = segmentId;
   }
 

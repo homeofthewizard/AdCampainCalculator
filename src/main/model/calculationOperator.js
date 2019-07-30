@@ -10,7 +10,12 @@ var CalculationElement = require('./calculationElement');
  */
 class CalculationOperator extends CalculationElement{
 
-  constructor(left, right, operator){
+  constructor(options, operator){
+    var left, right;
+    if(options.left)
+      left = options.left;
+    if(options.right)
+      right = options.right;
     super(left,right);
     this._operator = operator;
   }

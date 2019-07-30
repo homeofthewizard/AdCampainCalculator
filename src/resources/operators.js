@@ -1,7 +1,7 @@
 const Operators = Object.freeze({
-  AND: { name: "and", operate: function(a, b) { return a && b } },
-  OR:  { name: "or", operate: function(a, b) { return a || b } },
-  NOT: { name: "not", operate: function(a) { return !a } }
+  AND: { name: "AND", operate: function(a, b) { return (a === 'true') && (b === 'true') } },
+  OR:  { name: "OR", operate: function(a, b) { return (a === 'true') || (b === 'true') } },
+  NOT: { name: "NOT", operate: function(a) { return !(a === 'true') } }
 });
 
 // import {Enum} from 'enumify';
