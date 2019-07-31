@@ -1,6 +1,6 @@
 "use strict";
 
-var CalculationElement = require('./calculationElement');
+import CalculationElement from './calculationElement';
 
 
 /**

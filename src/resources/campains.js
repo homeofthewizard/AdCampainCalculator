@@ -1,7 +1,8 @@
-var Operators = require('./operators');
-var Segments = require('./segmentsBook');
-var CalculationOperand = require('../main/model/calculationOperand');
-var CalculationOperator = require('../main/model/calculationOperator');
+import Operators from './operators';
+import Segments from './segmentsBook';
+import CalculationOperand from '../main/model/calculationOperand';
+import CalculationOperator from '../main/model/calculationOperator';
+
 
 
 

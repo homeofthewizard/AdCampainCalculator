@@ -1,9 +1,9 @@
 "use strict";
 
-var CalculationElement = require('./model/calculationElement');
-var CalculationOperand = require('./model/calculationOperand');
-var Operators = require('../resources/operators');
-var Segments = require('../resources/segmentsBook');
+import CalculationElement from './model/calculationElement';
+import CalculationOperand from './model/calculationOperand';
+import Operators from '../resources/operators';
+import Segments from '../resources/segmentsBook';
 
 
 class CampainCalculator{
@@ -49,7 +49,7 @@ class CampainCalculator{
     return result;
   }
 
-  
+
   timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
